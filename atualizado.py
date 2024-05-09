@@ -15,7 +15,7 @@ driver.get(url)
 try:
     # Encontre o elemento que contém o número total de páginas
     total_paginas_element = driver.find_element(By.XPATH, '/html/body/div[1]/div[5]/div/nav/ul/li[8]/a')
-    total_paginas = 200  #int(total_paginas_element.text)
+    total_paginas = int(total_paginas_element.text)
 
     # Loop para navegar pelas páginas
     pagina_atual = 1
@@ -42,7 +42,7 @@ try:
         df = pd.DataFrame(dados)
 
         # Salve o DataFrame como um arquivo CSV
-        df.to_csv('dados.csv', index=False, mode='a', header=None)
+        df.to_csv('dados_atualizados.csv', index=False, mode='a', header=None)
 
         # Encontre o botão para passar a página e clique nele
         try:
@@ -58,7 +58,7 @@ try:
 
 except Exception as e:
     print(f"Erro ao raspar dados: {e}")
-    df.to_csv('dados.csv', index=False, mode='a', header=None)
+    df.to_csv('dados_atualizados.csv', index=False, mode='a', header=None)
     print("Os dados raspados até agora foram salvos em 'dados.csv'.")
 
 finally:
