@@ -30,3 +30,7 @@ para rodar qualquer um dos scripts das cidades é necessário intelar as seguint
   pip install tqdm
 ```
     
+## Suporte
+
+Para suporte, mande um email para henrique.cunha@estudante.ifmt.edu.br ou entre em no instagram @heriquesev.
+
